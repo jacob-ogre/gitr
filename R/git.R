@@ -1,3 +1,20 @@
+#' \code{git init} a new repo
+#'
+#' Checks that there isn's a .git directory first so that a repo isn't re-inited
+#' (unless you force).
+#'
+#' @param force Whether to force init [FALSE]
+#' @return Any results from running \code{git init}
+#' @export
+#' @examples
+#' # Ginit()
+Ginit <- function(force = FALSE) {
+  if(dir.exists(".git") & !force) {
+    stop("Already a repo! Use `force = TRUE` if you want to re-init.")
+  }
+  system("git init")
+}
+
 #' \code{git add --all}, aka, quick-add
 #'
 #' @return Any results from running \code{git add --all}
