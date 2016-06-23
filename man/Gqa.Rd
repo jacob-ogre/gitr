@@ -2,17 +2,20 @@
 % Please edit documentation in R/git.R
 \name{Gqa}
 \alias{Gqa}
-\title{\code{git add --all}, aka, quick-add}
+\title{\code{git add --all && commit -m 'x'} with message x}
 \usage{
-Gqa()
+Gqa(msg)
+}
+\arguments{
+\item{msg}{A message to include with a commit}
 }
 \value{
-Any results from running \code{git add --all}
+Any results from running commit
 }
 \description{
-\code{git add --all}, aka, quick-add
+\code{git add --all && commit -m 'x'} with message x
 }
 \examples{
-# Gqa()
+# Gqa("A silly commit message.")
 }
 

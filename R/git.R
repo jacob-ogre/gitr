@@ -20,8 +20,8 @@ Ginit <- function(force = FALSE) {
 #' @return Any results from running \code{git add --all}
 #' @export
 #' @examples
-#' # Gqa()
-Gqa <- function() {
+#' # Gadd()
+Gadd <- function() {
   system("git add --all")
 }
 
@@ -37,6 +37,20 @@ Gcommit <- function(msg) {
   cmd <- paste("git commit -m '", msg, "'")
   system(cmd, wait = TRUE)
 }
+
+#' \code{git add --all && commit -m 'x'} with message x
+#'
+#' @param msg A message to include with a commit
+#' @return Any results from running commit
+#' @export
+#' @examples
+#' # Gqa("A silly commit message.")
+Gqa <- function(msg) {
+  if(missing(msg)) stop("A message is needed for commit.")
+  cmd <- paste("git add --all && git commit -m '", msg, "'")
+  system(cmd, wait = TRUE)
+}
+
 
 #' \code{git status}
 #'
