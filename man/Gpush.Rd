@@ -5,21 +5,14 @@
 \title{\code{git push} to a remote repo}
 \usage{
 Gpush()
-
-Gpush()
 }
 \value{
 Any results from running the command
-
-Any results from running \code{git pull}
 }
 \description{
 \code{git push} to a remote repo
-
-\code{git pull} from a remote repo
 }
 \examples{
 # Gpush()
-# Gpull()
 }
 

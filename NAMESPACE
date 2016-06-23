@@ -2,5 +2,7 @@
 
 export(Gcommit)
 export(Git)
+export(Gpull)
 export(Gpush)
 export(Gqa)
+export(Gstatus)

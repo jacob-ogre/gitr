@@ -8,6 +8,31 @@ Gqa <- function() {
   system("git add --all")
 }
 
+#' \code{git commit -m 'x'} with message x
+#'
+#' @param msg A message to include with a commit
+#' @return Any results from running commit
+#' @export
+#' @examples
+#' # Gcommit("A silly commit message.")
+Gcommit <- function(msg) {
+  if(missing(msg)) stop("A message is needed for commit.")
+  cmd <- paste("git commit -m '", msg, "'")
+  system(cmd, wait = TRUE)
+}
+
+#' \code{git status}
+#'
+#' @param msg A message to include with a commit
+#' @return Any results from running commit
+#' @export
+#' @examples
+#' # Gstatus()
+Gstatus <- function() {
+  cmd <- paste("git status")
+  system(cmd, wait = TRUE)
+}
+
 #' \code{git push} to a remote repo
 #'
 #' @return Any results from running the command
@@ -24,21 +49,8 @@ Gpush <- function() {
 #' @export
 #' @examples
 #' # Gpull()
-Gpush <- function() {
+Gpull <- function() {
   system("git pull")
-}
-
-#' \code{git commit -m 'x'} with message x
-#'
-#' @param msg A message to include with a commit
-#' @return Any results from running commit
-#' @export
-#' @examples
-#' # Gcommit("A silly commit message.")
-Gcommit <- function(msg) {
-  if(missing(msg)) stop("A message is needed for commit.")
-  cmd <- paste("git commit -m '", msg, "'")
-  system(cmd, wait = TRUE)
 }
 
 #' An empty \code{git} call
