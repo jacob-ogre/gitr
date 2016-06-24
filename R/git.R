@@ -51,10 +51,19 @@ Gqa <- function(msg) {
   system(cmd, wait = TRUE)
 }
 
-
 #' \code{git status}
 #'
-#' @param msg A message to include with a commit
+#' @return Any results from running commit
+#' @export
+#' @examples
+#' # Gstatus()
+Gstatus <- function() {
+  cmd <- paste("git status")
+  system(cmd, wait = TRUE)
+}
+
+#' \code{git remote -v}
+#'
 #' @return Any results from running commit
 #' @export
 #' @examples
