@@ -12,6 +12,8 @@ This initial version includes just the functions (and flags) I use most-often.
 
 `Gcommit("A message")` performs a commit on added files; fails if no message is given.
 
+`Gamend("A message")` amends the previous commit; fails if no message is given.
+
 `Gqa("A message")` is a quick add & commit, i.e., `git add --all && git commit -m 'A message'`. Use with appropriate caution.
 
 `Gstatus()` returns the current status of the repo.
