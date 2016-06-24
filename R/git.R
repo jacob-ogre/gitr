@@ -57,6 +57,19 @@ Gqa <- function(msg) {
   system(cmd, wait = TRUE)
 }
 
+#' \code{git commit --amend -m 'x'} with message x
+#'
+#' @param msg A message to include with a commit
+#' @return Any results from running \code{git commit --amend -m}
+#' @export
+#' @examples
+#' # Gamend("A silly commit message.")
+Gamend <- function(msg) {
+  if(missing(msg)) stop("A message is needed for commit.")
+  cmd <- paste("git commit --amend -m '", msg, "'")
+  system(cmd, wait = TRUE)
+}
+
 #' \code{git status}
 #'
 #' @return Any results from running commit

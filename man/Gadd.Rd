@@ -4,7 +4,10 @@
 \alias{Gadd}
 \title{\code{git add --all}, aka, quick-add}
 \usage{
-Gadd()
+Gadd(...)
+}
+\arguments{
+\item{...}{Objects to add; uses '--all' if nothing provided}
 }
 \value{
 Any results from running \code{git add --all}
