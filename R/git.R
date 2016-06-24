@@ -64,12 +64,12 @@ Gstatus <- function() {
 
 #' \code{git remote -v}
 #'
-#' @return Any results from running commit
+#' @return The remote for the repo
 #' @export
 #' @examples
-#' # Gstatus()
-Gstatus <- function() {
-  cmd <- paste("git status")
+#' # Gremotev()
+Gremotev <- function() {
+  cmd <- paste("git remote -v")
   system(cmd, wait = TRUE)
 }
 
