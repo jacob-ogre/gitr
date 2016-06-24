@@ -17,12 +17,18 @@ Ginit <- function(force = FALSE) {
 
 #' \code{git add --all}, aka, quick-add
 #'
+#' @param ... Objects to add; uses '--all' if nothing provided
 #' @return Any results from running \code{git add --all}
 #' @export
 #' @examples
 #' # Gadd()
-Gadd <- function() {
-  system("git add --all")
+Gadd <- function(...) {
+  if(length(list(...)) == 0) {
+    system("git add --all")
+  } else {
+    cmd <- paste("git add", paste(list(...), collapse = " "), sep = " ")
+    system(cmd)
+  }
 }
 
 #' \code{git commit -m 'x'} with message x
