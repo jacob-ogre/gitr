@@ -13,8 +13,10 @@ Ginit(force = FALSE)
 Any results from running \code{git init}
 }
 \description{
-Checks that there isn's a .git directory first so that a repo isn't re-inited
-(unless you force).
+Checks with user that the init is being done in the right directory, to avoid
+those cases where the user isn't where they think they are. Also checks that
+there isn's a .git directory first so that a repo isn't re-inited #' (unless
+\code{force = TRUE}).
 }
 \examples{
 # Ginit()

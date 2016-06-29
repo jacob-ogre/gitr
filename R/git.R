@@ -1,7 +1,9 @@
 #' \code{git init} a new repo
 #'
-#' Checks that there isn's a .git directory first so that a repo isn't re-inited
-#' (unless you force).
+#' Checks with user that the init is being done in the right directory, to avoid
+#' those cases where the user isn't where they think they are. Also checks that
+#' there isn's a .git directory first so that a repo isn't re-inited #' (unless
+#' \code{force = TRUE}).
 #'
 #' @param force Whether to force init [FALSE]
 #' @return Any results from running \code{git init}
@@ -9,6 +11,12 @@
 #' @examples
 #' # Ginit()
 Ginit <- function(force = FALSE) {
+  pwd <- getwd()
+  msg <- paste("This will `git init`", pwd, "Are you sure? (Y/N) ")
+  ans <- readline(msg)
+  if(ans != "Y") {
+    stop("Aborted init...")
+  }
   if(dir.exists(".git") & !force) {
     stop("Already a repo! Use `force = TRUE` if you want to re-init.")
   }
